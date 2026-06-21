@@ -13,10 +13,10 @@ keep_locally = false
 }
 resource "docker_container" "nginx-luffy" {
 image = docker_image.nginx.image_id
-name = "nginx-luffy-tf"
+name = "var.container_name"
 ports {
 internal = 80
-external = 8080
+external= var.external_port
 }
 volumes {
 host_path = "/home/naina/my-website"
